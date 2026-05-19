@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nos actions – Ensemble pour Demain</title>
+  <meta name="description" content="Découvrez nos 5 projets concrets : éducation, environnement, insertion, santé et culture." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    html { scroll-behavior: smooth; }
+    .card-hover { transition: transform .3s ease, box-shadow .3s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,.12); }
+    .btn-primary { transition: all .25s ease; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(22,101,52,.35); }
+    .nav-link::after { content: ''; display: block; width: 0; height: 2px; background: #166534; transition: width .3s ease; }
+    .nav-link:hover::after { width: 100%; }
+    .nav-link.active::after { width: 100%; }
+    .page-banner { background: linear-gradient(135deg, rgba(22,101,52,0.9) 0%, rgba(56,189,248,0.45) 100%); }
+    #mobile-menu { transition: max-height .35s ease, opacity .25s ease; }
+    @media (max-width: 767px) {
+      #mobile-menu.open { max-height: 400px; opacity: 1; }
+      #mobile-menu { max-height: 0; opacity: 0; overflow: hidden; }
+    }
+    input, textarea { transition: border-color .2s ease, box-shadow .2s ease; }
+    input:focus, textarea:focus { border-color: #166534; box-shadow: 0 0 0 3px rgba(22,101,52,.15); }
+  </style>
+</head>
+<body class="bg-stone-50 text-stone-800 antialiased">
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-stone-200 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2 text-emerald-800 font-bold text-xl no-underline">
+        <i class="fa-solid fa-seedling text-emerald-600"></i>
+        <span>Ensemble pour Demain</span>
+      </a>
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <li><a href="index.html" class="nav-link text-stone-700 hover:text-emerald-800 no-underline">Accueil</a></li>
+        <li><a href="actions.html" class="nav-link active text-stone-700 hover:text-emerald-800 no-underline">Nos actions</a></li>
+        <li><a href="actualites.html" class="nav-link text-stone-700 hover:text-emerald-800 no-underline">Actualités</a></li>
+        <li><a href="soutenir.html" class="nav-link text-stone-700 hover:text-emerald-800 no-underline">Nous soutenir</a></li>
+        <li><a href="index.html#rejoindre" class="btn-primary inline-block bg-emerald-700 text-white px-5 py-2 rounded-full text-sm font-semibold no-underline hover:bg-emerald-800">Adhérer</a></li>
+      </ul>
+      <button id="burger" class="md:hidden text-stone-700 text-2xl bg-transparent border-0 cursor-pointer p-1" aria-label="Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden bg-white border-t border-stone-200">
+      <ul class="flex flex-col gap-1 px-4 pb-4 pt-2 text-sm font-medium">
+        <li><a href="index.html" class="block py-2 text-stone-700 hover:text-emerald-800 no-underline">Accueil</a></li>
+        <li><a href="actions.html" class="block py-2 text-stone-700 hover:text-emerald-800 no-underline">Nos actions</a></li>
+        <li><a href="actualites.html" class="block py-2 text-stone-700 hover:text-emerald-800 no-underline">Actualités</a></li>
+        <li><a href="soutenir.html" class="block py-2 text-stone-700 hover:text-emerald-800 no-underline">Nous soutenir</a></li>
+        <li><a href="index.html#rejoindre" class="block py-2 text-emerald-700 font-semibold no-underline">Adhérer</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============ BANNIÈRE ============ -->
+  <section class="relative pt-16 pb-20 md:pb-28 flex items-center min-h-[40vh] overflow-hidden">
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
+    <div class="absolute inset-0 page-banner"></div>
+    <div class="relative z-10 text-center text-white px-4 max-w-3xl mx-auto mt-10">
+      <p class="text-emerald-200 font-semibold text-sm tracking-widest uppercase mb-2">Ce que nous faisons</p>
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">Nos actions</h1>
+      <p class="text-lg text-white/85 max-w-xl mx-auto">
+        Des projets concrets, portés par des bénévoles passionnés, pour répondre aux besoins de chaque territoire.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ GRILLE DES ACTIONS ============ -->
+  <section class="py-20 md:py-28 px-4 -mt-10 relative z-20">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Action 1 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm card-hover">
+          <div class="h-44 bg-emerald-100 bg-[url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop')] bg-cover bg-center"></div>
+          <div class="p-5">
+            <span class="inline-block bg-emerald-100 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full mb-3">Éducation</span>
+            <h3 class="font-bold text-lg mb-2">Campus du Savoir</h3>
+            <p class="text-stone-600 text-sm leading-relaxed mb-4">Soutien scolaire, ateliers numériques et orientation pour les jeunes de 6 à 25 ans.</p>
+            <ul class="text-sm text-stone-500 space-y-1">
+              <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>120 jeunes accompagnés par an</li>
+              <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Ateliers code & robotique</li>
+              <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Aide aux devoirs quotidienne</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Action 2 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm card-hover">
+          <div class="h-44 bg-sky-100 bg-[url('https://images.unsplash.com/photo-1590947132387-155cc02f3212?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
+          <div class="p-5">
+            <span class="inline-block bg-sky-100 text-sky-800 text-xs font-semibold px-3 py-1 rounded-full mb-3">Environnement</span>
+            <h3 class="font-bold text-lg mb-2">Quartiers Verts</h3>
+            <p class="text-stone-600 text-sm leading-relaxed mb-4">Création de jardins partagés, compost collectif et sensibilisation à l'écologie.</p>
+            <ul class="text-sm text-stone-500 space-y-1">
+              <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>3 jardins partagés inaugurés</li>
+              <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Ateliers compost & permaculture</li>
+              <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>40 bénévoles engagés</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Action 3 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm card-hover">
+          <div class="h-44 bg-amber-100 bg-[url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
+          <div class="p-5">
+            <span class="inline-block bg-amber-100 text-amber-800 text-xs font-semibold px-3 py-1 rounded-full mb-3">Insertion</span>
+            <h3 class="font-bold text-lg mb-2">Emploi Proximité</h3>
+            <p class="text-stone-600 text-sm leading-relaxed mb-4">Accompagnement vers l'emploi, ateliers CV, coaching et mise en réseau avec les entreprises locales.</p>
+            <ul class="text-sm text-stone-500 space-y-1">
+              <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>80 personnes accompagnées</li>
+              <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>65 % de retour à l'emploi</li>
+              <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Partenariat avec 30 entreprises</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Action 4 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm card-hover">
+          <div class="h-44 bg-rose-100 bg-[url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
+          <div class="p-5">
+            <span class="inline-block bg-rose-100 text-rose-800 text-xs font-semibold px-3 py-1 rounded-full mb-3">Santé</span>
+            <h3 class="font-bold text-lg mb-2">Bien-être pour Tous</h3>
+            <p class="text-stone-600 text-sm leading-relaxed mb-4">Ateliers nutrition, sport adapté, maraudes de prévention et accès aux soins.</p>
+            <ul class="text-sm text-stone-500 space-y-1">
+              <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>200 participants aux ateliers</li>
+              <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Maraudes hebdomadaires</li>
+              <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Partenariat avec 5 professionnels de santé</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Action 5 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm card-hover md:col-span-2 lg:col-span-1">
+          <div class="h-44 bg-purple-100 bg-[url('https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
+          <div class="p-5">
+            <span class="inline-block bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full mb-3">Culture</span>
+            <h3 class="font-bold text-lg mb-2">Cultures Partagées</h3>
+            <p class="text-stone-600 text-sm leading-relaxed mb-4">Événements interculturels, bibliothèque de rue et ateliers artistiques gratuits.</p>
+            <ul class="text-sm text-stone-500 space-y-1">
+              <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>12 événements par an</li>
+              <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Bibliothèque de rue itinérante</li>
+              <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Ateliers musique, théâtre & arts plastiques</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="py-16 px-4 bg-emerald-800 text-white text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3">Envie de participer ?</h2>
+      <p class="text-emerald-200 mb-6">Toutes nos actions sont ouvertes aux bénévoles. Rejoignez une équipe motivée !</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="index.html#rejoindre" class="btn-primary bg-white text-emerald-800 px-8 py-3 rounded-full font-bold no-underline hover:bg-stone-100">Devenir bénévole</a>
+        <a href="soutenir.html" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold no-underline hover:bg-white/10">Nous soutenir</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEWSLETTER ============ -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3 text-stone-800">Restez informé·e</h2>
+      <p class="text-stone-600 mb-6">Recevez notre newsletter mensuelle et suivez l'avancée de nos projets.</p>
+      <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="return handleNewsletter(event)">
+        <input type="email" required placeholder="Votre email"
+          class="flex-1 px-4 py-3 rounded-full text-stone-800 text-sm outline-none border border-stone-300" />
+        <button type="submit"
+          class="btn-primary bg-emerald-700 text-white px-6 py-3 rounded-full font-bold text-sm border-0 cursor-pointer hover:bg-emerald-800 whitespace-nowrap">
+          S'abonner
+        </button>
+      </form>
+      <p id="newsletterFeedback" class="text-sm mt-3 hidden"></p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-stone-900 text-stone-400 px-4 py-12">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-8">
+      <div>
+        <div class="flex items-center gap-2 text-white font-bold text-lg mb-3">
+          <i class="fa-solid fa-seedling text-emerald-500"></i>
+          <span>Ensemble pour Demain</span>
+        </div>
+        <p class="text-sm leading-relaxed">Association loi 1901 — Agréée Jeunesse et Éducation Populaire.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-3">Liens rapides</h4>
+        <ul class="flex flex-col gap-2 text-sm">
+          <li><a href="index.html" class="hover:text-white no-underline text-stone-400">Accueil</a></li>
+          <li><a href="actions.html" class="hover:text-white no-underline text-stone-400">Nos actions</a></li>
+          <li><a href="actualites.html" class="hover:text-white no-underline text-stone-400">Actualités</a></li>
+          <li><a href="soutenir.html" class="hover:text-white no-underline text-stone-400">Nous soutenir</a></li>
+          <li><a href="index.html#rejoindre" class="hover:text-white no-underline text-stone-400">Adhérer</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-3">Contact</h4>
+        <ul class="flex flex-col gap-2 text-sm">
+          <li><i class="fa-solid fa-envelope mr-2 w-4"></i>contact@ensemblepourdemain.fr</li>
+          <li><i class="fa-solid fa-phone mr-2 w-4"></i>01 23 45 67 89</li>
+          <li><i class="fa-solid fa-location-dot mr-2 w-4"></i>12 Rue des Solidarités, 75012 Paris</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-3">Mentions légales</h4>
+        <p class="text-xs leading-relaxed">
+          Association Ensemble pour Demain — SIRET : 123 456 789 00012.<br />
+          Directeur de la publication : Jean Dupont.<br />
+          Hébergement : GitHub Pages / Netlify.<br />
+          Images : Unsplash (licence libre).<br />
+          &copy; <span id="year"></span> Ensemble pour Demain — Tous droits réservés.
+        </p>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto mt-8 pt-6 border-t border-stone-700 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
+      <p>Construit avec <i class="fa-solid fa-heart text-red-500"></i> pour un monde plus juste.</p>
+      <div class="flex gap-5">
+        <a href="https://facebook.com/ensemblepourdemain" class="hover:text-[#1877F2] no-underline text-stone-400 text-2xl transition-colors" aria-label="Facebook" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://instagram.com/ensemblepourdemain" class="hover:text-[#E4405F] no-underline text-stone-400 text-2xl transition-colors" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://linkedin.com/company/ensemblepourdemain" class="hover:text-[#0A66C2] no-underline text-stone-400 text-2xl transition-colors" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    burger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      burger.innerHTML = mobileMenu.classList.contains('open')
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
+    });
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        burger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      });
+    });
+    function handleNewsletter(e) {
+      e.preventDefault();
+      const nf = document.getElementById('newsletterFeedback');
+      nf.className = 'text-sm text-center text-emerald-700 font-medium';
+      nf.textContent = '✅ Merci pour votre inscription !';
+      nf.classList.remove('hidden');
+      e.target.reset();
+      setTimeout(() => { nf.classList.add('hidden'); }, 4000);
+      return false;
+    }
+  </script>
+</body>
+</html>
